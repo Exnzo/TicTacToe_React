@@ -1,0 +1,80 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #baa800cd);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  color: aliceblue;
+  background-color: transparent;
+  padding: 11em;
+  border-radius: 10px;
+  border-style: groove;
+  box-shadow: 10px 10px 10px rgba(0, 255, 234, 0.574);
+  border-color: #3737374a;
+}
+
+.newgame{
+  font-family: cursive;
+  color: white;
+background-color: rgba(0, 211, 183, 0.637);
+--border-size: 4px;
+--border-angle: 5turn;
+background-image: conic-gradient(
+      from var(--border-angle),
+      rgb(0, 0, 0),
+      rgb(0, 0, 0) 50%,
+      rgb(1, 0, 2)
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, rgb(0, 229, 255), rgb(0, 64, 159));
+  background-size: calc(100% - (var(--border-size) * 1))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 5s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 9turn;
+    }
+  }
+}
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.newgame:hover{
+  color: rgb(0, 82, 88);
+  background-color: rgb(33, 241, 252);
+  background-image: none;
+  transition: 1s ease-in-out;
+}
